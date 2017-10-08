@@ -55,7 +55,8 @@ while(true) {
     }
     if(this->snake.back().col >= this->screen->width ||this->snake.back().col <= 0 ||this->snake.back().row <= 0 ||this->snake.back().row >= this->screen->height) break;
 
-    //DRAW BOX
+    ////DRAW BOX -> SLOWS DOWN THE GAME ALOT!
+    /*
         for(int i = 0; i < this->screen->width - 1; i++) {
             this->screen->Set(0,i,'-');
             this->screen->Set(this->screen->height - 1,i,'-');
@@ -65,6 +66,7 @@ while(true) {
             this->screen->Set(i,this->screen->width - 1,'|');
         }
     //
+    *////
     this->screen->Draw();
     this->screen->Refresh();
     this->snake.erase(this->snake.begin());
